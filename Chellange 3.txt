@@ -1,0 +1,37 @@
+implement a function called sort_students that takes a list of student objects as input and sorts the list based on their CGPA (cumulative Grade point Average) in descending order.  Each student object has the following attributes: name (string),roll_number(string),and cgpa(float).  Test the function with different input lists of studsents.
+class Student:
+    def __init__(self, name, roll_number, cgpa):
+        self.name = name
+        self.roll_number = roll_number
+        self.cgpa = cgpa
+
+def sort_students(student_list):
+    # Sorting the list of students based on CGPA in descending order
+    sorted_students = sorted(student_list, key=lambda x: x.cgpa, reverse=True)
+    return sorted_students
+
+# Test the function with different input lists of students
+if __name__ == "__main__":
+    # Example 1
+    students_list_1 = [
+        Student("Alice", "A001", 3.8),
+        Student("Bob", "A002", 3.5),
+        Student("Charlie", "A003", 3.9),
+    ]
+
+    sorted_students_1 = sort_students(students_list_1)
+    print("Sorted Students (Example 1):")
+    for student in sorted_students_1:
+        print(f"{student.name} - CGPA: {student.cgpa}")
+
+    # Example 2
+    students_list_2 = [
+        Student("David", "A004", 3.6),
+        Student("Eva", "A005", 3.2),
+        Student("Frank", "A006", 3.7),
+    ]
+
+    sorted_students_2 = sort_students(students_list_2)
+    print("\nSorted Students (Example 2):")
+    for student in sorted_students_2:
+        print(f"{student.name} - CGPA: {student.cgpa}")
